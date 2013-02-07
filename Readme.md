@@ -7,6 +7,10 @@ config database.yml
     rake db:create
     rake db:migrate
 
+##Testing Instructions
+    rake db:test:prepare
+    bundle exec guard
+
 ##Deliverables
 * A page with a grid showing all 100 videos, and their monetization policy per country.
 * A page taking a single parameter (ISO-country code, e.g. US), and shows all videos available in the specified country.
