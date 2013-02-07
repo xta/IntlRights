@@ -17,6 +17,7 @@ development:
   encoding: unicode
   database: IntlRights_development
   pool: 5
+  host: localhost
   username: IntlRights
   password:
 
@@ -43,6 +44,7 @@ test:
   encoding: unicode
   database: IntlRights_test
   pool: 5
+  host: localhost
   username: IntlRights
   password:
 
@@ -51,5 +53,6 @@ production:
   encoding: unicode
   database: IntlRights_production
   pool: 5
+  host: localhost
   username: IntlRights
   password:
