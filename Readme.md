@@ -34,4 +34,4 @@ config database.yml
 ###Resources
 
 * [ISO-country codes](http://en.wikipedia.org/wiki/ISO_3166-1)
-* **Heroku link TBD**
+* [Demo site](http://intlrightsdemo.herokuapp.com/)
