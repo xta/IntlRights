@@ -11,6 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130207202744) do
+
+  create_table "countries", :force => true do |t|
+    t.string   "name"
+    t.string   "alpha2"
+    t.string   "alpha3"
+    t.string   "numeric"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "policies", :force => true do |t|
+    t.integer  "video_id"
+    t.integer  "country_id"
+    t.string   "type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "videos", :force => true do |t|
+    t.string   "vid"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end
