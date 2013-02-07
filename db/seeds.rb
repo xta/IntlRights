@@ -17,3 +17,12 @@
   end
 
 # Videos
+
+  (0..99).each do |video_count|
+    two_digit = format('%02d', video_count)
+    video = Video.create(:vid => "Vid#{two_digit}")
+
+    Country.all.each do |country|
+      Policy.create(:video_id => video.id, :country_id => country.id, :rights => Policy::POLICY_RIGHTS.sample)
+    end
+  end

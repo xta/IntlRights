@@ -3,7 +3,7 @@ class CreatePolicies < ActiveRecord::Migration
     create_table :policies do |t|
       t.integer :video_id
       t.integer :country_id
-      t.string :type
+      t.string :rights
 
       t.timestamps
     end
