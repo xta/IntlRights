@@ -4,6 +4,6 @@ FactoryGirl.define do
   factory :policy do
     video_id 1
     country_id 1
-    type ""
+    rights "Free"
   end
 end

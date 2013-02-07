@@ -4,7 +4,8 @@ describe Video do
 
   before(:each) do
     @video = FactoryGirl.create(:video)
-    6.times { @video.countries << FactoryGirl.create(:country) }
+    country = FactoryGirl.create(:country)
+    6.times { @video.policies << FactoryGirl.create(:policy, :video_id => @video.id, :country_id => country.id) }
   end
 
   context 'for a video' do
