@@ -9,7 +9,7 @@
 # Countries
   # United States, Canada, China, Mexico, India, and Taiwan
 
-  countries = %w(us ca ch mx in tw)
+  countries = %w(us ca cn mx tw in)
 
   countries.each do |country|
     code = IsoCountryCodes.find(country)
