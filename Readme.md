@@ -2,10 +2,12 @@
 *sample app for managing rights by country code*
 
 ##Setup Instructions
-config database.yml
+config `database.yml`
 
     rake db:create
     rake db:migrate
+
+Optional: create 500K additional videos `rake create_video_thousand_times[500]`
 
 ##Testing Instructions
     rake db:test:prepare
