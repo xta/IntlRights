@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
 
   def index
-    @videos = Video.all(:include => :countries)
+    @videos = Video.includes(:countries).page(params[:page]).per(100)
   end
 
   def show

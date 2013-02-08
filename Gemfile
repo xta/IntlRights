@@ -4,6 +4,7 @@ gem 'rails', '3.2.11'
 gem 'jquery-rails'
 gem 'pg'
 gem 'iso_country_codes'
+gem 'kaminari'
 
 group :assets do
   gem 'uglifier', '>= 1.0.3'
