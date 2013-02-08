@@ -20,3 +20,10 @@ nav header {
 nav section {
   padding: 10px 40px;
 }
+
+footer {
+  border-top: 10px #eee solid;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+}
