@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
 
   def index
-    @videos = Video.all
+    @videos = Video.all(:include => :countries)
   end
 
   def show
