@@ -1,5 +1,21 @@
 <% @videos.each do |video| %>
-  <p>
-    <%= video.vid %>
-  </p>
+  <div class="video-wrapper">
+    <h3><%= video.vid %></h3>
+    <table>
+      <tr>
+        <th>Country</th>
+        <th>Free</th>
+        <th>Monetize</th>
+        <th>Block</th>
+      </tr>
+      <% video.policies.each do |policy| %>
+        <tr>
+          <td><%= policy.country.name %></td>
+          <td><%= "X" if policy.rights == "Free" %></td>
+          <td><%= "X" if policy.rights == "Monetize" %></td>
+          <td><%= "X" if policy.rights == "Block" %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 <% end %>
