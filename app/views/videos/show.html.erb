@@ -1,0 +1,15 @@
+<% if @country %>
+
+  <h2><%= @country.name %></h2>
+
+  <%= @video.vid %>:
+
+  <% @video.policies.each do |policy| %>
+    <%= policy.rights %>
+  <% end %>
+
+<% else %>
+
+  <p>Please enter a valid country code.</p>
+
+<% end %>

@@ -20,7 +20,7 @@ describe VideosController do
 
   describe '.show' do
     before :each do 
-      get :show, :vid => 'Vid00', :country => 'US'
+      get :show, :id => 1, :country => 'US'
     end
 
     it { should render_template("show") }

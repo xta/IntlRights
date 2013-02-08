@@ -5,6 +5,8 @@ class VideosController < ApplicationController
   end
 
   def show
+    @country = Country.find_by_alpha2( params[:country].upcase )
+    @video = Video.find(params[:id], :include => :policies, :conditions => { :policies => { :country_id => @country.id } }) if @country
   end
 
   def country
