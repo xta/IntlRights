@@ -1,4 +1,7 @@
 IntlRights::Application.routes.draw do
+  get 'country/:iso_code' => 'videos#country'
+  get 'show/:vid' => 'videos#show'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
