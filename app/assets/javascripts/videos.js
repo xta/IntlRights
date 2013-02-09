@@ -6,7 +6,12 @@ $(function() {
   $('#by_video_and_country input[type=submit]').on("click", function(){
     $video_id     = $("input#video_id").val();
     $country_code = $("select#country_code").val();
-    window.location.href = "/show/" + $video_id + "?iso_code=" + $country_code;
+
+    if ( ($video_id== '') || (isNaN($video_id)) ) {
+      alert('Please enter a video ID.');
+    } else {
+      window.location.href = "/show/" + $video_id + "?iso_code=" + $country_code;
+    }
     return false;
   });
 

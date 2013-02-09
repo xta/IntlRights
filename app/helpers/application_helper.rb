@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def show_current(video)
-    video ? video.id : 8
+    video ? raw( "value=\'#{video.id}\'" ) : ""
   end
 
 end
