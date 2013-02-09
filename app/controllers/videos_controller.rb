@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
 
   def index
-    @videos = Video.includes(:countries)
+    @videos = Video.includes(:countries).page(params[:page])
 
     respond_to do |format|
       format.html

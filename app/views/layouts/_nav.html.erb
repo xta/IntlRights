@@ -1,0 +1,30 @@
+<nav>
+  <div id="by_country">
+    <header>View by country:</header>
+    <section>
+      <% country_list.each do |country| %>
+        <%= link_to country.name, "/country/#{country.alpha2}" %>
+      <% end %>
+    </section>
+  </div>
+
+  <div id="by_video_and_country">
+    <header>View by video ID & country:</header>
+    <section>
+      <form>
+        <label for="video_id">Video ID</label>
+        <input type="text" name="video_id" id="video_id" value="<%= show_current(@video) %>">
+
+        <select id="country_code">
+          <% country_list.each do |country| %>
+            <option value="<%= country.alpha2 %>" 
+              <%= dropdown_selected if @country && @country.alpha2 == country.alpha2 %>
+              ><%= country.name %></option>
+          <% end %>
+        </select>
+
+        <input type="submit" value="Lookup">
+      </form>
+    </section>
+  </div>
+</nav>
