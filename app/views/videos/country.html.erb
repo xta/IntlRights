@@ -2,6 +2,8 @@
 
   <h2><%= @country.name %></h2>
 
+  <%= paginate @videos %>
+
   <% @videos.each do |video| %>
 
     <p>

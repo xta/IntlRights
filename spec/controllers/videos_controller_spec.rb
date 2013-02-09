@@ -20,7 +20,7 @@ describe VideosController do
 
   describe '.show' do
     before :each do 
-      get :show, :id => 1, :country => 'US'
+      get :show, :id => 1, :iso_code => 'US'
     end
 
     it { should render_template("show") }

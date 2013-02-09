@@ -8,4 +8,9 @@ class Country < ActiveRecord::Base
 
   has_many :policies, :dependent => :destroy
   has_many :videos, :through => :policies
+
+  def self.by_iso(alpha2_param)
+    self.find_by_alpha2(alpha2_param.upcase)
+  end
+
 end
