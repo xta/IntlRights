@@ -25,7 +25,7 @@
       <section>
         <form>
           <label for="video_id">Video ID</label>
-          <input type="text" name="video_id" id="video_id" value="<%= @video_id ? @video_id : 8 %>">
+          <input type="text" name="video_id" id="video_id" value="<%= show_current(@video_id) %>">
 
           <select id="country_code">
             <% country_list.each do |country| %>
