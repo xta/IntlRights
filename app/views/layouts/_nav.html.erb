@@ -3,7 +3,7 @@
     <header>View by country:</header>
     <section>
       <% country_list.each do |country| %>
-        <%= link_to country.name, "/country/#{country.alpha2}" %>
+        <%= link_to country.name, "/country/#{country.alpha2}" %> &nbsp; 
       <% end %>
     </section>
   </div>
@@ -13,7 +13,7 @@
     <section>
       <form>
         <label for="video_id">Video ID</label>
-        <input type="text" name="video_id" id="video_id" placeholder="8" <%= show_current(@video) %>>
+        <input type="text" name="video_id" id="video_id" placeholder="8" size="10" <%= show_current(@video) %>>
 
         <select id="country_code">
           <% country_list.each do |country| %>

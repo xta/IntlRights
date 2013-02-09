@@ -1,20 +1,32 @@
 <% if @country %>
 
-  <h2><%= @country.name %></h2>
+  <h1><%= @country.name %></h1>
 
   <%= paginate @videos %>
 
-  <% @videos.each do |video| %>
+  <table>
+    <thead>
+        <tr>
+          <th>Vid</th>
+          <th>Rights Policy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @videos.each do |video| %>
+          <tr>
+            <td>
+              <%= video.vid %>
+            </td>
+            <td>
+              <% video.policies.each do |policy| %>
+                <%= policy.rights %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-    <p>
-    <%= video.vid %>
-
-    <% video.policies.each do |policy| %>
-      <%= policy.rights %>
-    <% end %>
-    </p>
-
-  <% end %>
 
 <% else %>
 

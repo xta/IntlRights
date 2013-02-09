@@ -1,23 +1,28 @@
+<h1>All Videos</h1>
 <%= paginate @videos %>
 
 <% @videos.each do |video| %>
   <div class="video-wrapper">
-    <h3><%= video.vid %></h3>
     <table>
-      <tr>
-        <th>Country</th>
-        <th>Free</th>
-        <th>Monetize</th>
-        <th>Block</th>
-      </tr>
-      <% video.policies.each do |policy| %>
+      <caption><%= video.vid %></caption>
+      <thead>
         <tr>
-          <td><%= policy.country.name %></td>
-          <td><%= "X" if policy.rights == "Free" %></td>
-          <td><%= "X" if policy.rights == "Monetize" %></td>
-          <td><%= "X" if policy.rights == "Block" %></td>
+          <th>Country</th>
+          <th>Free</th>
+          <th>Monetize</th>
+          <th>Block</th>
         </tr>
-      <% end %>
+      </thead>
+      <tbody>
+        <% video.policies.each do |policy| %>
+          <tr>
+            <td><%= policy.country.name %></td>
+            <td><%= "X" if policy.rights == "Free" %></td>
+            <td><%= "X" if policy.rights == "Monetize" %></td>
+            <td><%= "X" if policy.rights == "Block" %></td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
   </div>
 <% end %>

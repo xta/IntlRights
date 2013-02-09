@@ -1,11 +1,11 @@
 <% if @country %>
 
-  <h2><%= @country.name %></h2>
+  <h1><%= @video.id %>. <%= @video.vid %></h1>
 
-  <%= @video.vid %>:
+  The policy in <strong><%= @country.name %></strong> is 
 
   <% @video.policies.each do |policy| %>
-    <%= policy.rights %>
+    <em><%= policy.rights %></em>.
   <% end %>
 
 <% else %>
