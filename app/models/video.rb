@@ -18,8 +18,8 @@ class Video < ActiveRecord::Base
       find(id, :conditions => { policies: {country_id: country.id} })
     end
 
-    def self.by_country(country)
-      where(policies: {country_id: country.id})
+    def self.available_by_country(country)
+      where(policies: {country_id: country.id, rights: Policy::AVAILABLE_RIGHTS})
     end
 
 end

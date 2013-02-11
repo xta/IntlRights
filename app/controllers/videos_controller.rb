@@ -21,7 +21,7 @@ class VideosController < ApplicationController
 
   def country
     @country = Country.by_iso( params[:iso_code] )
-    @videos = Video.by_country(@country).page(params[:page]) if @country
+    @videos = Video.available_by_country(@country).page(params[:page]) if @country
 
     respond_to do |format|
       format.html
