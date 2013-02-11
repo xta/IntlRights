@@ -11,7 +11,7 @@ class VideosController < ApplicationController
 
   def show
     @country = Country.by_iso( params[:iso_code] )
-    @video = Video.by_id_and_country(params[:id], @country) if @country
+    @video = Video.by_id_and_country(params[:id], @country)
 
     respond_to do |format|
       format.html
@@ -21,7 +21,7 @@ class VideosController < ApplicationController
 
   def country
     @country = Country.by_iso( params[:iso_code] )
-    @videos = Video.available_by_country(@country).page(params[:page]) if @country
+    @videos = Video.available_by_country(@country).page(params[:page])
 
     respond_to do |format|
       format.html

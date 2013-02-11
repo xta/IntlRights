@@ -21,8 +21,8 @@ describe VideosController do
     end
 
     describe '.show' do
-      before :each do 
-        get :show, :id => 1, :iso_code => 'US'
+      before :each do
+        get :show, :id => 10, :iso_code => 'US'
       end
 
       it { should render_template("show") }
@@ -54,7 +54,7 @@ describe VideosController do
 
     describe '.show' do
       before :each do
-        get :show, :id => 1, :iso_code => 'US', :format => :json
+        get :show, :id => 10, :iso_code => 'US', :format => :json
       end
 
       it "should be successful" do
