@@ -17,4 +17,14 @@ task :create_video_thousand_times, [:num_of_times] => :environment do |t, args|
     puts "Created #{vid_name}"
   end
 
+  #clear cache
+    Rails.cache.clear
+
+    cache_dir = ActionController::Base.page_cache_directory
+    unless cache_dir == Rails.root + "/public"
+      FileUtils.rm_r(Dir.glob(cache_dir+"/index.html")) rescue Errno::ENOENT
+      FileUtils.rm_r(Dir.glob(cache_dir+"/country/*")) rescue Errno::ENOENT
+      FileUtils.rm_r(Dir.glob(cache_dir+"/videos/*")) rescue Errno::ENOENT
+    end
+
 end
