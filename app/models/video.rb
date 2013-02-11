@@ -19,6 +19,7 @@ class Video < ActiveRecord::Base
     end
 
     def self.available_by_country(country)
+      order('videos.id ASC').
       where(policies: {country_id: country.id, rights: Policy::AVAILABLE_RIGHTS})
     end
 
