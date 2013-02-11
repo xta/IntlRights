@@ -3,7 +3,9 @@
     <header>View available videos by country:</header>
     <section>
       <% country_list.each do |country| %>
-        <%= link_to country.name, "/country/#{country.alpha2}" %> &nbsp; 
+        <% cache ["nav_list", country] do %>
+          <%= link_to country.name, "/country/#{country.alpha2}" %> &nbsp; 
+        <% end %>
       <% end %>
     </section>
   </div>
