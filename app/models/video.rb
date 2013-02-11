@@ -6,7 +6,7 @@ class Video < ActiveRecord::Base
     has_many :countries, :through => :policies
 
   #validation
-    validates :vid, :uniqueness => true
+    validates :vid, :uniqueness => true, :presence => true
 
   #pagination
     paginates_per 100

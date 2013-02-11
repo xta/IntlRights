@@ -10,6 +10,9 @@ class Policy < ActiveRecord::Base
     AVAILABLE_RIGHTS = %w( Free Monetize )
 
   #validation
+    validates :video_id, :presence => true 
+    validates :country_id, :presence => true
+    validates :rights, :presence => true
     validates_inclusion_of :rights, :in => POLICY_RIGHTS
 
 end

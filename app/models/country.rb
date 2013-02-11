@@ -6,10 +6,10 @@ class Country < ActiveRecord::Base
     has_many :videos, :through => :policies
 
   #validation
-    validates :name, :uniqueness => true
-    validates :alpha2, :uniqueness => true
-    validates :alpha3, :uniqueness => true
-    validates :numeric, :uniqueness => true
+    validates :name, :uniqueness => true, :presence => true
+    validates :alpha2, :uniqueness => true, :presence => true
+    validates :alpha3, :uniqueness => true, :presence => true
+    validates :numeric, :uniqueness => true, :presence => true
 
   def self.by_iso(alpha2_param)
     self.find_by_alpha2(alpha2_param.upcase)
