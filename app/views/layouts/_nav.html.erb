@@ -1,6 +1,6 @@
 <nav>
   <div id="by_country">
-    <header>View by country:</header>
+    <header>View available videos by country:</header>
     <section>
       <% country_list.each do |country| %>
         <%= link_to country.name, "/country/#{country.alpha2}" %> &nbsp; 
@@ -9,7 +9,7 @@
   </div>
 
   <div id="by_video_and_country">
-    <header>View by video ID & country:</header>
+    <header>Lookup a policy by video ID & country:</header>
     <section>
       <form>
         <label for="video_id">Video ID</label>
