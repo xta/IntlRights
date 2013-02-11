@@ -1,39 +1,45 @@
 #Intl Rights
 *sample app for managing rights by country code*
 
-##Setup Instructions
-config `database.yml`
+##Stack
+* ruby 1.9.3p374 
+* Rails 3.2.11
+* PostgreSQL
 
-    rake db:create
-    rake db:migrate
+##Development Setup
+    git clone git@github.com:xta/IntlRights.git
+    cd IntlRights
+    bundle
+    rake bootstrap:setup    
+config `database.yml` & type 'continue'
 
-Optional: create 500K additional videos `rake create_video_thousand_times[500]`
+    rails s
 
-##Testing Instructions
+Optional task: create 500K additional videos `rake create_video_thousand_times[500]`
+
+##Test Setup
     rake db:test:prepare
-    bundle exec guard
+    rake db:seed RAILS_ENV=test
+`bundle exec guard` OR `rspec`
+
+##Development Caching Enabled
+Caching is enabled in development mode at `config/environments/development.rb`
+
+If experiencing cache expiration issues, you may enter the command `Rails.cache.clear` in Rails Console to clear the cache.
 
 ##Deliverables
-* A page with a grid showing all 100 videos, and their monetization policy per country.
-* A page taking a single parameter (ISO-country code, e.g. US), and shows all videos available in the specified country.
-* A page taking two parameters (video primary key and country code), and shows monetization policy.
-* Heroku live site
+* [Live site](http://intlrightsdemo.herokuapp.com/)
+* [A page with a grid showing all 100 videos, and their monetization policy per country.](http://intlrightsdemo.herokuapp.com/)
+* [A page taking a single parameter (ISO-country code, e.g. US), and shows all videos available in the specified country.](http://intlrightsdemo.herokuapp.com/country/US)
+* [A page taking two parameters (video primary key and country code), and shows monetization policy.](http://intlrightsdemo.herokuapp.com/show/8?iso_code=US)
 
-##Considerations
-* Every 60 minutes, data can become stale
-* Read (not write) is priority
-
-##Possible Roadmap
-* Hourly refresh of data handling
-* Cache returned results every hour
-
-###Policy Types
+##Policy Types
 
 * Monetize – a video can be viewed, and can have ads run against it
 * Free – a video can be viewed, but cannot have ads run against it
 * Block – a video cannot be viewed
 
-###Resources
+##Resources
 
 * [ISO-country codes](http://en.wikipedia.org/wiki/ISO_3166-1)
 * [Demo site](http://intlrightsdemo.herokuapp.com/)
