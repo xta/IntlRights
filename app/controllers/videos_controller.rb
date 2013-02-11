@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  caches_page :index
+  caches_page :index, :country
 
   def index
     @videos = Video.includes(:countries).page(params[:page])

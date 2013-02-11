@@ -18,3 +18,4 @@
 # Ignore Cache
 public/index.html
 public/videos/*
+public/country/*
